@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "graphql": "npm run graphql:introspect && npm run graphql:generate",
+    "graphql:generate": "CODEGEN_RESOLVERS=false gql-gen --schema schema.json --template graphql-codegen-apollo-angular-template --out src/app/generated/graphql.ts",
+    "graphql:introspect": "gql-gen --schema src/schema.graphql --template graphql-codegen-introspection-template --out schema.json"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +23,9 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "apollo-angular-boost": "^1.1.0",
     "core-js": "^2.5.4",
+    "graphql": "^14.0.2",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
@@ -33,6 +38,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "graphql-code-generator": "^0.11.0",
+    "graphql-codegen-apollo-angular-template": "^0.11.0",
+    "graphql-codegen-introspection-template": "^0.11.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

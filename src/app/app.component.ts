@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app',
+  template: `
+     <div>
+      <todo-form></todo-form>
+      <todo-list></todo-list>
+      <footer></footer>
+    </div>
+  `
 })
-export class AppComponent {
-  title = 'apollo-angular-local-state';
-}
+export class AppComponent {}
